@@ -28,5 +28,11 @@ export const reviewRepository = {
             create: data,
             update: data
         });
+    },
+
+    getReviewSummary(productId: number) {
+        return prisma.summary.findUnique({
+            where: { productId }
+        });
     }
 };
